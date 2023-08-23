@@ -1719,3 +1719,7 @@ label form [type='radio'] {
     align-content: center;
   }
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
