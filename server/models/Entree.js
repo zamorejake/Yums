@@ -22,7 +22,7 @@ const entreeSchema = new Schema({
     required: true,
   },
   image: {
-    type: STRING,
+    type: String,
   },
 });
 

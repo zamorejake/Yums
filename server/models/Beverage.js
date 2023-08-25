@@ -22,7 +22,7 @@ const beverageSchema = new Schema({
     required: true,
   },
   image: {
-    type: STRING,
+    type: String,
   },
 });
 
