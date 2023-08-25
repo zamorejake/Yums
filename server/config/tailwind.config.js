@@ -70,4 +70,11 @@ export default function DefaultButtonGroup() {
   )
 }
 
-
+<div className="flex p-6 font-mono">
+  <div class= "flex-none w-48 mb-10 realtive z-10 before:absolute before:top-1 before:left-1 before:w-full before:h-full before:bg-teal-400"></div>
+  <img src="" alt="" class="absolute z-10 inset-0 w-full h-full object-cover rounded-lg" loading="lazy" />
+  </div>
+  <form class="flex-auto pl-6">
+  <div class="relative flex flex-wrap items-baseline pb-6 before:bg-black before:absolute before:-top-6 before:bottom-0 before:-left-60 before:-right-6">
+    <h1 class="relative w-full flex-none mb-2 text-2xl font-semibold text-white">
+      Retro Shoe
