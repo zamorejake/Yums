@@ -1,58 +1,47 @@
-const { Model, DataTypes } = require('sequelize');
+
+const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-const sequelize = require('../config/connection');
 
-class Admin extends Model {
-  checkPassword(loginPw) {
-    return bcrypt.compareSync(loginPw, this.password);
-  }
-}
-
-Admin.init(
+const adminSchema = new Schema(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
     name: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: String,
+      required: true,
+      unique: true,
+      trim: true;
     },
     email: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      type: String,
+      required: true,
       unique: true,
-      validate: {
-        isEmail: true,
-      },
+      match: [/.+@.+\..+/, 'Must use a valid email address'],
     },
     password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [8],
-      },
+      type: String,
+      required: true,
+      minlength: 5;
     },
   },
-  {
-    hooks: {
-      beforeCreate: async (newAdminData) => {
-        newAdminData.password = await bcrypt.hash(newAdminData.password, 10);
-        return newAdminData;
-      },
-      beforeUpdate: async (updatedAdminData) => {
-        updatedAdminData.password = await bcrypt.hash(updatedAdminData.password, 10);
-        return updatedAdminData;
-      },
-    },
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'admin',
-  }
 );
 
+// hash user password
+userSchema.pre('save', async function (next) {
+  if (this.isNew || this.isModified('password')) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+  }
+
+  next();
+});
+
+// custom method to compare and validate password for logging in
+userSchema.methods.isCorrectPassword = async function (password) {
+  return bcrypt.compare(password, this.password);
+};
+
+const Admin = model('Admin', adminSchema);
+
 module.exports = Admin;
+
+
+

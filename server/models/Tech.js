@@ -1,3 +1,6 @@
+
+/*
+
 const { Schema, model } = require('mongoose');
 
 const techSchema = new Schema({
@@ -11,3 +14,5 @@ const techSchema = new Schema({
 const Tech = model('Tech', techSchema);
 
 module.exports = Tech;
+
+*/

@@ -1,46 +1,39 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
 
-class Beverage extends Model {}
+const { Schema, model } = require('mongoose');
 
-Beverage.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    description: {
-      type: DataTypes.STRING,
-    },
-    price: {
-      type: DataTypes.FLOAT,
-      allowNull: false,
-    },
-    in_stock: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
-    has_alcohol: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
-    image: {
-      type: DataTypes.STRING,
-    },
+const beverageSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
   },
-  {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'beverage',
-  }
-);
+  description: {
+    type: String,
+  },
+  price: {
+    type: Float,
+    required: true,
+  },
+  in_stock: {
+    type: BOOLEAN,
+    required: true,
+  },
+  has_alcohol: {
+    type: BOOLEAN,
+    required: true,
+  },
+  image: {
+    type: String,
+  },
+});
+
+const Beverage = model('Beverage', beverageSchema);
 
 module.exports = Beverage;
+
+
+
+
+
+
+
+

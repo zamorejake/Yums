@@ -215,3 +215,7 @@ header nav a:hover {
 .card:hover::after {
   transform: rotateX(0deg) translateZ(1px);
 }
+
+.title {
+  height: 4.5rem;
+}
