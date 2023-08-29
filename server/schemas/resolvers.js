@@ -3,13 +3,13 @@ const { Admin, Beverage, Entree, Restaurant } = require('../models');
 const resolvers = {
   Query: {
 
-    beverage: async (parent, { filter }) => {
+    beverages: async (parent, { filter }) => {
       return Beverage.find(filter || {});
     },
-    entree: async (parent, { filter }) => {
+    entrees: async (parent, { filter }) => {
       return Entree.find(filter || {});
     },
-    restaurant: async () => {
+    restaurants: async () => {
       return Restaurant.find({});
     },
   },
