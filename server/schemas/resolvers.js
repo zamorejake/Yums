@@ -41,30 +41,29 @@ const resolvers = {
       return { token, admin };
     },
 
-    createBeverage: async (parent, args, context) => {
+    createBeverage: async (parent, { beverage }, context) => {
 
       if (!context) {
         throw AuthenticationError;
       }
-      const beverage = await Beverage.create(args);
-      return beverage;
+      return await Beverage.create(beverage);
     },
-    createEntree: async (parent, args, context) => {
+    createEntree: async (parent, { entree }, context) => {
 
       if (!context) {
         throw AuthenticationError;
       }
 
-      const entree = await Entree.create(args);
+      const entree = await Entree.create(entree);
       return entree;
     },
-    createRestaurant: async (parent, args, context) => {
+    createRestaurant: async (parent, { restaurant }, context) => {
 
       if (!context) {
         throw AuthenticationError;
       }
 
-      const restaurant = await Restaurant.create(args);
+      const restaurant = await Restaurant.create(restaurant);
       return restaurant;
     },
 
