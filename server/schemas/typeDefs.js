@@ -120,7 +120,7 @@ const typeDefs = `
     login(email: String!, password: String!): Auth
     createRestaurant( restaurant : RestaurantInput! ): Restaurant!
     createEntree( entree: EntreeInput!): Entree!
-    createBeverage( beverage: BeverageInput!): Beverage!
+    createBeverage( beverage: BeverageInput!): Beverage
     removeRestaurant(restaurantId: ID!): Restaurant!
     removeEntree(entreeId: ID!): Entree!
     removeBeverage(BeverageId: ID!): Beverage!
