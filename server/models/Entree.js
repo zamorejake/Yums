@@ -18,7 +18,7 @@ const entreeSchema = new Schema({
     required: true,
   },
   allergy: {
-    type: Boolean,
+    type: [String],
     required: true,
   },
   image: {

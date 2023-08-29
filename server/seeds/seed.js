@@ -1,13 +1,16 @@
-const sequelize = require('../config/connection');
+const db = require('../config/connection');
+const cleanDB = require('./cleanDB');
 const { Admin, Beverage, Entree } = require('../models');
-
 const AdminData = require('./adminData.json');
 const beverageData = require('./beverageData.json');
 const entreeData = require('./entreeData.json');
 
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
 
+db.once('open', async () => {
+  await cleanDB('Admin', 'admins');
+  await cleanDB('Entree', 'entrees');
+  await cleanDB('Beverage', 'beverages');
 
   for (const admin of AdminData) {
     await Admin.create(admin);
@@ -26,7 +29,8 @@ const seedDatabase = async () => {
     });
   }
 
+  console.log('Seeded! 🌱');
   process.exit(0);
-};
+})};
 
 seedDatabase();
