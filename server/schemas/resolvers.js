@@ -54,8 +54,7 @@ const resolvers = {
         throw AuthenticationError;
       }
 
-      const entree = await Entree.create(entree);
-      return entree;
+      return await Entree.create(entree);
     },
     createRestaurant: async (parent, { restaurant }, context) => {
 
@@ -63,8 +62,7 @@ const resolvers = {
         throw AuthenticationError;
       }
 
-      const restaurant = await Restaurant.create(restaurant);
-      return restaurant;
+      return await Restaurant.create(restaurant);
     },
 
     removeBeverage: async (parent, { beverageId }, context) => {
