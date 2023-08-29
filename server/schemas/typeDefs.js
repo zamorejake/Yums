@@ -41,7 +41,7 @@ const typeDefs = `
     description: String!
     price: Float!
     in_stock: Boolean!
-    allergy: Boolean!
+    allergy: [String!]!
     image: String
   }
 
@@ -50,14 +50,14 @@ const typeDefs = `
     description: String
     price: Float
     in_stock: Boolean
-    allergy: Boolean
+    allergy: [String]
     image: String
   }
 
   input EntreeFilter {
     name: String
     in_stock: Boolean
-    allergy: Boolean
+    allergy: [String]
   }
 
   type Entree {
@@ -66,7 +66,7 @@ const typeDefs = `
     description: String!
     price: Float!
     in_stock: Boolean!
-    allergy: Boolean!
+    allergy: [String]!
     image: String
   }
 
