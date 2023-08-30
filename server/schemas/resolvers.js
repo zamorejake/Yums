@@ -87,32 +87,34 @@ const resolvers = {
         throw AuthenticationError;
       }
 
-      return Restaurant.findOneAndDelete({ _id: restaurantId });
-    },
-
-    updateBeverage: async (parent, { beverageId }, context) => {
-
-      if (!context) {
-        throw AuthenticationError;
-      }
-
-      return Beverage.findOneAndDelete({ _id: beverageId });
-    },
-    updateEntree: async (parent, { entreeId }, context) => {
-
-      if (!context) {
-        throw AuthenticationError;
-      }
-
-      return Entree.findOneAndDelete({ _id: entreeId });
-    },
-    updateRestaurant: async (parent, { restaurantId }, context) => {
-
-      if (!context) {
-        throw AuthenticationError;
-      }
+      console.log(restaurantId)
 
       return Restaurant.findOneAndDelete({ _id: restaurantId });
+    },
+
+    updateBeverage: async (parent, args, context) => {
+
+      if (!context) {
+        throw AuthenticationError;
+      }
+
+      return await Beverage.findByIdAndUpdate(args.id, args.beverage, { new: true });
+    },
+    updateEntree: async (parent, args, context) => {
+
+      if (!context) {
+        throw AuthenticationError;
+      }
+
+      return await Entree.findByIdAndUpdate(args.id, args.entree, { new: true });
+    },
+    updateRestaurant: async (parent, args, context) => {
+
+      if (!context) {
+        throw AuthenticationError;
+      }
+
+      return await Restaurant.findByIdAndUpdate(args.id, args.restaurant, { new: true } );
     },
 
     /*
