@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_ENTREE } from '../utils/queries';
-import Header from '../pages/Header';
-import Footer2 from '../pages/Footer';
+
 
 const Entree = () => {
   const { loading, data } = useQuery(QUERY_ENTREE);
@@ -20,9 +19,9 @@ const Entree = () => {
 
   return (
     <>
-      <Header />
       {/*there is an issue with resizing the cols with lower viewports so by default its for fullscreen, 2 looks good on small viewport 6 looks good on normal */}
       <div className="grid grid-cols-6 gap-2 md:gap-4">
+
       {entrees.map((entree) => (
         <div key={entree._id} className="pb-4">
           <div class="max-w-sm p-6 border border-gray-200 rounded-lg shadow dark:bg-gray-800 flex">
@@ -58,7 +57,6 @@ const Entree = () => {
         </div>
       ))}
       </div>
-      <Footer2 />
     </>
   );
 };
