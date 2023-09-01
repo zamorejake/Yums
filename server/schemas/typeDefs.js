@@ -3,6 +3,7 @@ const typeDefs = `
     _id: ID!
     name: String!
     email: String!
+    password: String
   }
 
   input RestaurantInput {
@@ -110,10 +111,11 @@ const typeDefs = `
   }
 
   type Query {
-    admin: [Admin]
+    admin(username: String!): Admin
     restaurants: [Restaurant]
     entrees(filter: EntreeFilter): [Entree]
     beverages(filter: BeverageFilter): [Beverage]
+    me: Admin
   }
 
   type Mutation {

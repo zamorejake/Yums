@@ -1,4 +1,7 @@
 const { Admin, Beverage, Entree, Restaurant } = require('../models');
+const { signToken, AuthenticationError } = require('../utils/auth');
+
+
 
 const resolvers = {
   Query: {
@@ -30,7 +33,7 @@ const resolvers = {
         throw AuthenticationError;
       }
 
-      const correctPw = await user.isCorrectPassword(password);
+      const correctPw = await admin.isCorrectPassword(password);
 
       if (!correctPw) {
         throw AuthenticationError;
