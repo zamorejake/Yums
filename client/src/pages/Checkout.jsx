@@ -1,9 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { useCart } from './CartContext';
+import { useStripe } from '@stripe/react-stripe-js';
 
 const Checkout = () => {
   const { cart, removeFromCart } = useCart();
   const total = cart.reduce((acc, item) => acc + item.price, 0);
+  const totalCents = total * 100;
+  const stripe = useStripe();
+
+  const handleCheckout = async () => {
+    !stripe ? console.error('Stripe failed to load.') : null;
+
+    const response = await fetch('http://localhost:3001/create-checkout', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        items: cart,
+        currency: 'usd',
+        total: totalCents,
+      }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      window.location.href = data.url;
+    } else {
+      console.error('Failed to checkout.');
+    }
+  };
+
   return (
     <>
       <button
@@ -32,7 +59,10 @@ const Checkout = () => {
           ))}
         </ul>
         <li className="pb-1 font-bold text-xl">Total: ${total.toFixed(2)}</li>
-        <button className="pb-1 px-2 text-white text-xl font-bold bg-green-400">
+        <button
+          onClick={handleCheckout}
+          className="pb-1 px-2 text-white text-xl font-bold bg-green-400"
+        >
           Checkout
         </button>
       </div>
