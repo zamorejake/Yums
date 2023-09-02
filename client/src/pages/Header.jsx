@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Navbar } from 'flowbite-react';
-
+import Checkout from '../pages/Checkout';
 const Header = () => {
 
   return (
@@ -23,7 +23,7 @@ const Header = () => {
           </Navbar.Link>
           <Navbar.Link href="#">Services</Navbar.Link>
           <Navbar.Link href="#">Pricing</Navbar.Link>
-          <Navbar.Link href="#">Contact</Navbar.Link>
+          <Checkout />
         </Navbar.Collapse>
       </Navbar>
     </>
