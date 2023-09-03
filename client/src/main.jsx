@@ -3,9 +3,12 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App.jsx';
 import Home from './pages/Home';
-import Matchup from './pages/Matchup';
-import Vote from './pages/Vote';
+import Login from './pages/Login';
+import Admin from './pages/Admin.jsx';
 import NotFound from './pages/NotFound';
+import Entree from './pages/Entree';
+import Success from './pages/Success.jsx';
+import Fail from './pages/Fail.jsx';
 
 const router = createBrowserRouter([
   {
@@ -16,12 +19,26 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />
-      }, {
-        path: '/matchup',
-        element: <Matchup />
-      }, {
-        path: '/matchup/:id',
-        element: <Vote />
+      },
+      {
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/admin', 
+        element: <Admin />
+      },
+      {
+        path: '/entree', 
+        element: <Entree />
+      },
+      {
+        path: '/success', 
+        element: <Success />
+      },
+      {
+        path: '/fail', 
+        element: <Fail />
       },
     ],
   },
