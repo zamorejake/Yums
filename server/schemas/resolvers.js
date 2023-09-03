@@ -18,16 +18,10 @@ const resolvers = {
   },
 
   Mutation: {
-    /*
-    addUser: async (parent, { username, email, password }) => {
-      const user = await User.create({ username, email, password });
-      const token = signToken(user);
-      return { token, user };
-    },
-    */
-
+   
     login: async (parent, { email, password }) => {
       const admin = await Admin.findOne({ email });
+      console.log(admin)
 
       if (!admin) {
         throw AuthenticationError;
@@ -40,6 +34,7 @@ const resolvers = {
       }
 
       const token = signToken(admin);
+      
 
       return { token, admin };
     },
