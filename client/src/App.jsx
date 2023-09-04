@@ -11,11 +11,13 @@ const client = new ApolloClient({
 
 function App() {
   return (
+    <div className='flex flex-col h-screen justify-between'>
     <ApolloProvider client={client}>
         <Header />
         <Outlet />
         <Footer2 />
     </ApolloProvider>
+    </div>
   );
 }
 

@@ -9,8 +9,14 @@ const resolvers = {
     beverages: async (parent, { filter }) => {
       return Beverage.find(filter || {});
     },
+    beverage: async (parent, { beverageId }) => {
+      return Beverage.findOne({ _id: beverageId });
+    },
     entrees: async (parent, { filter }) => {
       return Entree.find(filter || {});
+    },
+    entree: async (parent, { entreeId }) => {
+      return Entree.findOne({ _id: entreeId });
     },
     restaurants: async () => {
       return Restaurant.find({});
