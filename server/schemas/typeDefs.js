@@ -135,16 +135,3 @@ const typeDefs = `
 `;
 
 module.exports = typeDefs;
-
-
-/*
-type Query {
-  tech: [Tech]
-  matchups(_id: String): [Matchup]
-}
-
-type Mutation {
-  createMatchup(tech1: String!, tech2: String!): Matchup
-  createVote(_id: String!, techNum: Int!): Matchup
-}
-*/
