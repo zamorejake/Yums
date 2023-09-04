@@ -16,7 +16,11 @@ const client = new ApolloClient({
 
 function App() {
   return (
+
+    <div className='flex flex-col h-screen justify-between'>
+
     <Elements stripe={stripePromise}>
+
     <ApolloProvider client={client}>
         <CartProvider>
         <Header />
@@ -24,7 +28,11 @@ function App() {
         <Footer2 />
         </CartProvider>
     </ApolloProvider>
+
+    </div>
+
     </Elements>
+
   );
 }
 

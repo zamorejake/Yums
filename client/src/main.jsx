@@ -5,6 +5,10 @@ import App from './App.jsx';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Admin from './pages/Admin.jsx';
+import AdminEntree from './components/AdminEntrees.jsx'
+import SingleEntree from './pages/SingleEntree.jsx'
+import AdminBeverages from './components/AdminBeverages.jsx'
+import SingleBeverage from './pages/SingleBeverage.jsx'
 import NotFound from './pages/NotFound';
 import Entree from './pages/Entree';
 import Success from './pages/Success.jsx';
@@ -27,6 +31,22 @@ const router = createBrowserRouter([
       {
         path: '/admin', 
         element: <Admin />
+      },
+      {
+        path: '/admin/entrees', 
+        element: <AdminEntree />
+      },
+      {
+        path: '/admin/entrees/:entreeId',
+        element: <SingleEntree />
+      },
+      {
+        path: '/admin/beverages', 
+        element: <AdminBeverages />
+      },
+      {
+        path: '/admin/beverages/:beverageId',
+        element: <SingleBeverage />
       },
       {
         path: '/entree', 

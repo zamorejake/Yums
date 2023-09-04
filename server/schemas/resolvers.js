@@ -9,8 +9,14 @@ const resolvers = {
     beverages: async (parent, { filter }) => {
       return Beverage.find(filter || {});
     },
+    beverage: async (parent, { beverageId }) => {
+      return Beverage.findOne({ _id: beverageId });
+    },
     entrees: async (parent, { filter }) => {
       return Entree.find(filter || {});
+    },
+    entree: async (parent, { entreeId }) => {
+      return Entree.findOne({ _id: entreeId });
     },
     restaurants: async () => {
       return Restaurant.find({});
@@ -18,16 +24,10 @@ const resolvers = {
   },
 
   Mutation: {
-    /*
-    addUser: async (parent, { username, email, password }) => {
-      const user = await User.create({ username, email, password });
-      const token = signToken(user);
-      return { token, user };
-    },
-    */
-
+   
     login: async (parent, { email, password }) => {
       const admin = await Admin.findOne({ email });
+      console.log(admin)
 
       if (!admin) {
         throw AuthenticationError;
@@ -40,6 +40,7 @@ const resolvers = {
       }
 
       const token = signToken(admin);
+      
 
       return { token, admin };
     },

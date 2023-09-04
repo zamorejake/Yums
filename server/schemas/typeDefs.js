@@ -114,7 +114,9 @@ const typeDefs = `
     admin(username: String!): Admin
     restaurants: [Restaurant]
     entrees(filter: EntreeFilter): [Entree]
+    entree(entreeId: ID!): Entree
     beverages(filter: BeverageFilter): [Beverage]
+    beverage(beverageId: ID!): Beverage
     me: Admin
   }
 
