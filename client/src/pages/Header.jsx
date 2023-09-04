@@ -10,7 +10,7 @@ const Header = () => {
           <img
             alt="Yums Logo"
             className="mr-3 h-19 sm:h-14 title"
-            src="yums.png"
+            src="/yums.png"
           />
         </Navbar.Brand>
         <Navbar.Toggle />

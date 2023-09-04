@@ -20,9 +20,8 @@ const AdminMenu = () => {
 
   return (
     <>
-    <h1 className="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">View Beverage</h1>
-
-    <Card className='max-w-lg flex'>
+    <Card className='p-8 flex justify-center self-center'>
+        <h1 className="mb-8 text-center text-4xl font-bold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-4xl dark:text-white">View Beverages</h1>
         <Dropdown color="gray" label="Select Beverage">
             {beverages.map((beverage) => (
                 <div key={beverage._id} >

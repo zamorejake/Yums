@@ -120,22 +120,6 @@ const resolvers = {
 
       return await Restaurant.findByIdAndUpdate(args.id, args.restaurant, { new: true } );
     },
-
-    /*
-    createMatchup: async (parent, args) => {
-      const matchup = await Matchup.create(args);
-      return matchup;
-    },
-    createVote: async (parent, { _id, techNum }) => {
-      const vote = await Matchup.findOneAndUpdate(
-        { _id },
-        { $inc: { [`tech${techNum}_votes`]: 1 } },
-        { new: true }
-      );
-      return vote;
-    },
-    */
-
   },
 };
 
