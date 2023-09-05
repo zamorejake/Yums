@@ -7,9 +7,35 @@ const test = "test";
 
 return (
     <>
-    <Header />
-    <p>Welcome to Yum Yum Yard, a culinary haven where flavors and experiences converge. Our establishment is a testament to the artistry of gastronomy, offering an exquisite array of delectable dishes crafted with passion and precision. With an unwavering commitment to quality, our chefs curate each plate as an embodiment of culinary excellence, infusing both traditional and innovative techniques. Nestled within our inviting ambiance, every visit to Yum Yum Yard is an exploration of tastes, an indulgence in luxury, and a journey through the world of gastronomy. Discover the embodiment of fine dining, where every ingredient tells a story and every dish is an eloquent expression of our dedication to the culinary craft.</p>
-    <Footer2 />
+    <div class="container">
+    <div class="intro">
+      <h1>Welcome to Yums</h1>
+      <p class="description">Indulge in a culinary journey where flavors are artfully crafted, and experiences unfold with each delectable dish. At Yum Yum Yard, our devotion to culinary excellence is unwavering. With a harmonious blend of traditional wisdom and innovative techniques, our chefs meticulously prepare each plate to be a masterpiece of taste and presentation. Immerse yourself in an ambiance that exudes sophistication and relish in a symphony of flavors that tell stories of passion and dedication. Elevate your dining experience and discover the embodiment of refined gastronomy.</p>
+    </div>
+
+    <section class="hero">
+      <img class="h-auto max-w-full flex justify-center items-center" src="images/restaurant.jpg" alt="Background image"/>
+      <div class="container">
+        <h1>Experience Culinary Perfection</h1>
+        <p>Savor the extraordinary.</p>
+        <a href="#featured-recipes" class="cta-button">Explore Recipes</a>
+      </div>
+    </section>
+
+    <section id="featured-recipes" class="featured-recipes">
+      <div class="container">
+        <h2>Featured Recipes</h2>
+        <div class="recipe-card">
+          <h3>Signature Dish 1</h3>
+          <p>Discover the unique flavors of our signature dish.</p>
+        </div>
+        <div class="recipe-card">
+          <h3>Signature Dish 2</h3>
+          <p>Experience culinary excellence like never before.</p>
+        </div>
+      </div>
+    </section>
+  </div>
     </>
 );
 };
