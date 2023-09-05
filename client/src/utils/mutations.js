@@ -37,3 +37,30 @@ export const ADD_BEVERAGE = gql`
     }
 }
 `;
+
+export const REMOVE_ENTREE = gql`
+  mutation removeEntree($entreeId: ID!) {
+    removeEntree(entreeId: $entreeId) {
+      _id
+      name
+      description
+      price
+      in_stock
+      allergy
+      image
+  }
+}`
+;
+
+export const REMOVE_BEVERAGE = gql`
+mutation removeBeverage($beverageId: ID!) {
+  removeBeverage(beverageId: $beverageId) {
+    _id
+    name
+    description
+    price
+    in_stock
+    has_alcohol
+    image
+  }
+}`

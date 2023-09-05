@@ -22,7 +22,7 @@ const EntreeForm = () => {
     
         setFormState({
           ...formState,
-          [name]: value,
+          [name]: name === "price" ? Number(value) : name === "in_stock" ? Boolean(value) : value,
         });
     };
   
@@ -32,7 +32,7 @@ const EntreeForm = () => {
     
         try {
           const { data } = await createEntree({
-            variables: { ...formState },
+            variables: { entree: formState },
           });
     
         } catch (e) {

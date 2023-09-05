@@ -1,14 +1,18 @@
 // Import the `useParams()` hook
 import { useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 import { Card, Button } from 'flowbite-react';
 
 
 import { QUERY_SINGLE_BEVERAGE } from '../../utils/queries';
+import { REMOVE_BEVERAGE } from '../../utils/mutations';
 
 const SingleBeverage = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
   const { beverageId } = useParams();
+
+  const [ deleteBeverage ] = useMutation(REMOVE_BEVERAGE);
+
 
   const { loading, data } = useQuery(QUERY_SINGLE_BEVERAGE, {
     // pass URL parameter
@@ -16,6 +20,11 @@ const SingleBeverage = () => {
   });
 
   const beverage = data?.beverage || {};
+
+  const handleDeleteBeverage = async () => {
+    const result = await deleteBeverage({ variables: { beverageId } })    
+    // if (result) set state of that error message to the result      
+  }
 
   if (loading) {
     return <div>Loading...</div>;
@@ -44,7 +53,7 @@ const SingleBeverage = () => {
               </p>
               <Button.Group className='flex gap-2 justify-center'>
                 <Button color="gray" href={`/admin/beverages/${beverage._id}/edit`}>Edit</Button>
-                <Button color="red" href={`/admin/beverages/${beverage._id}/delete`}>Delete</Button>
+                <Button color="red" onClick={handleDeleteBeverage}>Delete</Button>
                 <Button color="blue" href={`/admin/beverages`}>Back</Button>
               </Button.Group>
             </div>

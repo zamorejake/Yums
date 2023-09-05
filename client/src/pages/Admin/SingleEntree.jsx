@@ -1,14 +1,18 @@
 // Import the `useParams()` hook
 import { useParams } from 'react-router-dom';
-import { useQuery } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import { Card, Button } from 'flowbite-react';
 
 
 import { QUERY_SINGLE_ENTREE } from '../../utils/queries';
 
+import { REMOVE_ENTREE } from '../../utils/mutations'
+
 const SingleEntree = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
   const { entreeId } = useParams();
+
+  const [ deleteEntree ] = useMutation(REMOVE_ENTREE);
 
   const { loading, data } = useQuery(QUERY_SINGLE_ENTREE, {
     // pass URL parameter
@@ -16,6 +20,11 @@ const SingleEntree = () => {
   });
 
   const entree = data?.entree || {};
+
+  const handleDeleteEntree = async () => {
+    const result = await deleteEntree({ variables: { entreeId } })    
+    // if (result) set state of that error message to the result      
+  }
 
   if (loading) {
     return <div>Loading...</div>;
@@ -46,7 +55,7 @@ const SingleEntree = () => {
               </p>
               <Button.Group className='flex gap-2 justify-center'>
                 <Button color="gray" href={`/admin/entrees/${entree._id}/edit`}>Edit</Button>
-                <Button color="red" href={`/admin/entrees/${entree._id}/delete`}>Delete</Button>
+                <Button color="red" onClick={handleDeleteEntree} >Delete</Button>
                 <Button color="blue" href={`/admin/entrees`}>Back</Button>
               </Button.Group>
             </div>

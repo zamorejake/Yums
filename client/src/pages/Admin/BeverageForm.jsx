@@ -23,7 +23,7 @@ const BeverageForm = () => {
     
         setFormState({
           ...formState,
-          [name]: value,
+          [name]: name === "price" ? Number(value) : name === "in_stock" ? Boolean(value) : name === "has_alcohol" ? Boolean(value) : value,
         });
     };
   
@@ -33,7 +33,7 @@ const BeverageForm = () => {
     
         try {
           createBeverage({
-            variables: { ...formState },
+            variables: { beverage: formState },
           });
     
         } catch (e) {
@@ -85,9 +85,9 @@ const BeverageForm = () => {
                   onChange={handleChange}
                 ></input>
                 <input
-                  name="allergy"
-                  placeholder="Allergies?"
-                  value={formState.allergy}
+                  name="has_alcohol"
+                  placeholder="Has Alcohol?"
+                  value={formState.has_alcohol}
                   className="form-input w-100"
                   style={{ lineHeight: '1.5', resize: 'vertical' }}
                   onChange={handleChange}
