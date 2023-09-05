@@ -29,9 +29,9 @@ function App() {
         </CartProvider>
     </ApolloProvider>
 
-    </div>
-
     </Elements>
+
+    </div>
 
   );
 }
