@@ -70,12 +70,13 @@ const resolvers = {
     },
 
     removeBeverage: async (parent, { beverageId }, context) => {
+      console.log(beverageId)
 
       if (!context) {
         throw AuthenticationError;
       }
 
-      return Beverage.findOneAndDelete({ _id: beverageId });
+      return await Beverage.findOneAndDelete({ _id: beverageId });
     },
     removeEntree: async (parent, { entreeId }, context) => {
 
@@ -83,7 +84,13 @@ const resolvers = {
         throw AuthenticationError;
       }
 
-      return Entree.findOneAndDelete({ _id: entreeId });
+      try {
+        const result = await Entree.findOneAndDelete({ _id: entreeId })
+        return true
+      }
+      catch {
+        return false
+      }
     },
     removeRestaurant: async (parent, { restaurantId }, context) => {
 

@@ -127,7 +127,7 @@ const typeDefs = `
     createBeverage( beverage: BeverageInput!): Beverage!
     removeRestaurant(restaurantId: ID!): Restaurant!
     removeEntree(entreeId: ID!): Entree!
-    removeBeverage(BeverageId: ID!): Beverage!
+    removeBeverage(beverageId: ID!): Beverage!
     updateRestaurant(id: ID!, restaurant: RestaurantUpdate!): Restaurant!
     updateEntree(id: ID!, entree: EntreeUpdate!): Entree!
     updateBeverage(id: ID!, beverage: BeverageUpdate!): Beverage!
