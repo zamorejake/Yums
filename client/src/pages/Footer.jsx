@@ -1,12 +1,9 @@
 
-import { useQuery } from '@apollo/client';
-import { QUERY_MATCHUPS } from '../utils/queries';
 import { Footer } from 'flowbite-react';
 
 const Footer2 = () => {
-const { loading, data } = useQuery(QUERY_MATCHUPS, {
-fetchPolicy: 'no-cache',
-});
+const test = "test";
+
 
 return (
     <>
