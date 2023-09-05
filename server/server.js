@@ -16,7 +16,7 @@ app.use(
     origin: [
       "http://localhost:3000",
       "http://127.0.0.1:3000",
-      "https://yums2-3c8c929ea654.herokuapp.com/",
+      "https://yums2-3c8c929ea654.herokuapp.com",
     ],
     credentials: true,
   })
