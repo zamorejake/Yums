@@ -20,10 +20,9 @@ const AdminMenu = () => {
 
   return (
     <>
-    <h1 className="mb-4 text-4xl font-bold leading-none tracking-tight text-gray-900 md:text-5xl 
-    lg:text-4xl dark:text-white">View Entree</h1>
-
-    <Card className='max-w-lg flex'>
+    <Card className='p-8 flex justify-center self-center'>
+        <h1 className="mb-8 text-center text-4xl font-bold leading-none tracking-tight text-gray-900 md:text-5xl 
+        lg:text-4xl dark:text-white">View Entree</h1>
         <Dropdown color="gray" label="Select Entrees">
             {entrees.map((entree) => (
                 <div key={entree._id} >
@@ -48,4 +47,3 @@ const AdminMenu = () => {
 }
 
 export default AdminMenu
-
