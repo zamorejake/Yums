@@ -62,8 +62,8 @@ const startApolloServer = async () => {
             quantity: 1,
           }
         }),
-        success_url: `http://127.0.0.1:3000/success`,
-        cancel_url: `http://127.0.0.1:3000/fail`,
+        success_url: `https://yums2-3c8c929ea654.herokuapp.com/success`,
+        cancel_url: `https://yums2-3c8c929ea654.herokuapp.com/fail`,
       })
       res.json({ url: session.url })
     } catch (err) {
