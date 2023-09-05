@@ -33,13 +33,9 @@ const startApolloServer = async () => {
 
   app.use(express.urlencoded({ extended: true }));
   app.use(express.json());
-<<<<<<< HEAD
-  
-  app.use("/graphql", expressMiddleware(server, {https://srv.carbonads.net/ads/click/x/GTND42J7CK7DVK3EF6B4YKQNF67I42QLCV7DLZ3JCYAI627NCKYI6KJKCWBICK3MCASDP2JUCWBI4K77CKAI62JKC6SDLK7LCKBDEK3EHJNCLSIZ?segment=placement:flowbitedesign;
-=======
+  //app.use("/graphql", expressMiddleware(server, {https://srv.carbonads.net/ads/click/x/GTND42J7CK7DVK3EF6B4YKQNF67I42QLCV7DLZ3JCYAI627NCKYI6KJKCWBICK3MCASDP2JUCWBI4K77CKAI62JKC6SDLK7LCKBDEK3EHJNCLSIZ?segment=placement:flowbitedesign;
 
   app.use("/graphql", expressMiddleware(server, {
->>>>>>> b48811b22319fb8ae8d57eac51dffe57bc45d9ba
     context: async ({ req }) => ({
       admin: await parseAdmin(req),
     }),
