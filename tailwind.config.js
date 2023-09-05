@@ -7,3 +7,13 @@ module.exports = {
   plugins: [require('flowbite/plugin')],
 }
 
+module.exports = {
+  theme: {
+    extend: {
+      backgroundImage: {
+        'hero-pattern': "url('\client\public\images\restaurant.jpg')",
+        'footer-texture': "url('\client\public\images\restaurant.jpg')",
+      }
+    }
+  }
+}

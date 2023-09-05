@@ -11,10 +11,13 @@ import AdminBeverages from './components/AdminBeverages.jsx'
 import SingleBeverage from './pages/Admin/SingleBeverage.jsx'
 import NotFound from './pages/NotFound';
 import Entree from './pages/Entree';
+import About from './pages/About';
+import Beverage from './pages/Beverage.jsx';
 import EntreeForm from './pages/Admin/EntreeForm.jsx';
 import BeverageForm from './pages/Admin/BeverageForm.jsx';
 import Success from './pages/Success.jsx';
 import Fail from './pages/Fail.jsx';
+import Privacy from './pages/Privacy.jsx'
 
 const router = createBrowserRouter([
   {
@@ -63,12 +66,24 @@ const router = createBrowserRouter([
         element: <Entree />
       },
       {
+        path: '/beverage', 
+        element: <Beverage />
+      },
+      {
+        path: '/about', 
+        element: <About />
+      },
+      {
         path: '/success', 
         element: <Success />
       },
       {
         path: '/fail', 
         element: <Fail />
+      },
+      {
+        path: '/privacy', 
+        element: <Privacy />
       },
     ],
   },
