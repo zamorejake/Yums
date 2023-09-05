@@ -17,6 +17,7 @@ import EntreeForm from './pages/Admin/EntreeForm.jsx';
 import BeverageForm from './pages/Admin/BeverageForm.jsx';
 import Success from './pages/Success.jsx';
 import Fail from './pages/Fail.jsx';
+import Privacy from './pages/Privacy.jsx'
 
 const router = createBrowserRouter([
   {
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
       {
         path: '/fail', 
         element: <Fail />
+      },
+      {
+        path: '/privacy', 
+        element: <Privacy />
       },
     ],
   },
