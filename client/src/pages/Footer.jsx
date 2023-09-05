@@ -1,4 +1,3 @@
-
 import { Footer } from 'flowbite-react';
 
 const Footer2 = () => {

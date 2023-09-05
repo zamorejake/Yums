@@ -10,15 +10,15 @@ const entreeSchema = new Schema({
     type: String,
   },
   price: {
-    type: Float,
+    type: Number,
     required: true,
   },
   in_stock: {
-    type: BOOLEAN,
+    type: Boolean,
     required: true,
   },
   allergy: {
-    type: BOOLEAN,
+    type: [String],
     required: true,
   },
   image: {

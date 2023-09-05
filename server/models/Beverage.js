@@ -10,15 +10,15 @@ const beverageSchema = new Schema({
     type: String,
   },
   price: {
-    type: Float,
+    type: Number,
     required: true,
   },
   in_stock: {
-    type: BOOLEAN,
+    type: Boolean,
     required: true,
   },
   has_alcohol: {
-    type: BOOLEAN,
+    type: Boolean,
     required: true,
   },
   image: {

@@ -1,23 +1,39 @@
 import { gql } from '@apollo/client';
 
-export const CREATE_MATCHUP = gql`
-  mutation createMatchup($tech1: String!, $tech2: String!) {
-    createMatchup(tech1: $tech1, tech2: $tech2) {
-      _id
-      tech1
-      tech2
+export const LOGIN_USER = gql`
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      admin {
+        _id
+        email
+      }
     }
   }
 `;
 
-export const CREATE_VOTE = gql`
-  mutation createVote($_id: String!, $techNum: Int!) {
-    createVote(_id: $_id, techNum: $techNum) {
-      _id
-      tech1
-      tech2
-      tech1_votes
-      tech2_votes
+export const ADD_ENTREE = gql`
+  mutation createEntree($entree: EntreeInput!) {
+    createEntree(entree: $entree) {
+      name
+      description
+      price
+      in_stock
+      allergy
+      image
     }
-  }
+}
+`;
+
+export const ADD_BEVERAGE = gql`
+  mutation createBeverage($beverage: BeverageInput!) {
+    createBeverage(beverage: $beverage) {
+      name
+      description
+      price
+      in_stock
+      has_alcohol
+      image
+    }
+}
 `;

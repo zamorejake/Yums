@@ -20,7 +20,7 @@ Yum Yum Yard is a cutting-edge cafe management platform designed to revolutioniz
 
 ## Installation
 
-Clone the repo, run npm i, create your .env file with respective usernames, password, and a db name of restaurant_db. Next navigate to the db folder and run source schema.sql within a MySQL terminal. After that navigate back to the main folder and run node seeds/seed to populate the database and then run npm start or nodemon start to launch the server on port 3001.
+Clone the repo, run npm i, create your .env file with respective usernames, password, and a db name of restaurant_db. Next navigate to the db folder and run source schema.sql within a MySQL terminal. After that navigate back to the main folder and run node seeds/seed to populate the database and then run npm start or nodemon start to launch the server on port 300/3001.
 
 ## Usage
 
