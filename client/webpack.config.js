@@ -37,7 +37,7 @@ module.exports = () => {
         publicPath: './',
         icons: [
           {
-            src: path.resolve('src/assets/react.svg'),
+            src: path.resolve('src/assets/yums.png'),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join('assets', 'icons'),
           },
