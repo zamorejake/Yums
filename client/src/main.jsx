@@ -13,6 +13,8 @@ import NotFound from './pages/NotFound';
 import Entree from './pages/Entree';
 import EntreeForm from './pages/Admin/EntreeForm.jsx';
 import BeverageForm from './pages/Admin/BeverageForm.jsx';
+import Success from './pages/Success.jsx';
+import Fail from './pages/Fail.jsx';
 
 const router = createBrowserRouter([
   {
@@ -59,6 +61,14 @@ const router = createBrowserRouter([
       {
         path: '/entree', 
         element: <Entree />
+      },
+      {
+        path: '/success', 
+        element: <Success />
+      },
+      {
+        path: '/fail', 
+        element: <Fail />
       },
     ],
   },
