@@ -426,7 +426,7 @@ button {
 }
 
 a {
-  color: #1b89bc;
+  color: #5e2c0d;
   text-decoration: none;
 }
 
@@ -985,7 +985,7 @@ a:hover {
   border-radius: 0.3rem;
   border: 1px solid transparent;
   outline: none;
-  color: #1a1a1a;
+  color: #161515;
   background-color: #aeaeae;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
@@ -1015,7 +1015,7 @@ a:hover {
 }
 
 .btn.btn-primary {
-  background-color: #2d3e50;
+  background-color: #767e86;
   color: #d9e9e8;
 }
 
@@ -1093,7 +1093,7 @@ a:hover {
 
 .card .card-header {
   padding: 0.375rem;
-  background-color: #2d3e50;
+  background-color: #2d4054;
   color: #d9e9e8;
 }
 
@@ -1718,6 +1718,13 @@ label form [type='radio'] {
   .align-content-center-xl {
     align-content: center;
   }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  
+  
 }
 
 @tailwind base;
