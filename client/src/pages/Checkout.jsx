@@ -11,7 +11,7 @@ const Checkout = () => {
   const handleCheckout = async () => {
     !stripe ? console.error('Stripe failed to load.') : null;
 
-    const response = await fetch('http://localhost:3001/create-checkout', {
+    const response = await fetch('https://yums2-3c8c929ea654.herokuapp.com/create-checkout', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
