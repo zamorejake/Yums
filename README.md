@@ -4,6 +4,8 @@
 
 Yums is a cutting-edge cafe management platform designed to revolutionize the way cafes operate and delight their customers. With its comprehensive set of features and intuitive interface, Yum Yum Yard empowers cafe owners and staff to efficiently manage all aspects of their business while providing an exceptional customer experience.
 
+![Stripe checkout example](https://github.com/zamorejake/PWA-Notepad-19/blob/main/client/public/images/yumsite.png)
+
 ## Table of Contents
 
 * [Installation](#installation)
@@ -24,7 +26,9 @@ Clone the repo, run `npm i`, create your .env file with your private stripe key 
 
 ## Usage
 
-npm i, npm run seed, and npm run develop.
+npm i, npm run seed, and npm run develop. When checking out with stripe we used the test key so we didn't have to use our credit card to test it, so the default stripe testing info is typing "42" repeatedly 
+
+![Stripe checkout example](https://github.com/zamorejake/PWA-Notepad-19/blob/main/client/public/images/4242.png)
 
 ## Credits
 
